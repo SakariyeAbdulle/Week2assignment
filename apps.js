@@ -9,6 +9,9 @@
     {src:"./dg.png", alt: "a image of ,a dalmation dog in spring" },
   ];
   const thumbnail= document.getElementById ("thumbnail-container");
+  const largeContainer =document.getElementById("large-image-container");
+
+
 
 
 function  CreateThumbnail(imagesArray){  for (imagesArray=0; imagesArray<images.length;imagesArray++){
@@ -18,13 +21,15 @@ function  CreateThumbnail(imagesArray){  for (imagesArray=0; imagesArray<images.
     newImage.alt = images[imagesArray].alt;
   newImage.className = "ImageStyle";
   thumbnail.appendChild(newImage);
-  // add event here 
+  
+  newImage.addEventListener("click", function () {
+    largeContainer.appendChild(newImage);
+  });
 
-};}
- 
+}};
+
 CreateThumbnail(images);
 function createLargeImagesHandler(largeImage){
   largeImageContainer.inner.HTML = null
-
 }
   
